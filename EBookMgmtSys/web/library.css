@@ -1,0 +1,119 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.library-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color:black;
+    padding: 15px 0;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+nav ul li a:hover {
+    color: #ccc;
+}
+
+.main {
+    margin-top: 20px;
+}
+
+.library-section h2 {
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Book Table Styling */
+.book-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.book-table th, .book-table td {
+    padding: 12px 20px;
+    text-align: center;
+}
+
+.book-table th {
+    background-color: rgba(0, 0, 0, 0.57);
+    color: white;
+    font-weight: bold;
+}
+
+.book-table td {
+    background-color: #fff;
+}
+
+.book-table tr:nth-child(even) {
+    background-color:black;
+}
+
+/* Icon Styling */
+.book-table a i {
+    font-size: 24px;
+    color: blue;
+}
+
+.book-table a:hover i {
+    color:navy;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}

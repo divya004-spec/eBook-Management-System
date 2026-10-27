@@ -64,7 +64,7 @@ EBook-Management-System/
 5. Run the project from the IDE.
 6. Open the application at:
 
-   `http://localhost:8080/EBookMgmtSys/`
+   `http://localhost:8080/eBook-Management-System/`
 
 The application initializes its Apache Derby database and sample records on startup. The default database configuration supports embedded mode; network mode can be configured if required.
 

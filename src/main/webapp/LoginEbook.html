@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - EBook Management System</title>
+
+    <link rel="stylesheet" href="stylex.css" type="text/css"/>
+    <link rel="stylesheet" href="app.css" type="text/css"/>
+</head>
+<body>
+    <div class="background">
+        <div class="login-container">
+            <h2>Login</h2>
+            <div id="flash" class="flash" style="display:none"></div>
+            <form action="LoginServlet" method="post">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required autofocus>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+                <p class="register-link">Don't have an account? <a href="Register.jsp">Register here</a></p>
+                <p class="register-link"><a href="index.html">Back to home</a></p>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Shows a status message coming from the servlets (?error=... / ?msg=...).
+        // Only fixed texts from this table are ever displayed.
+        (function () {
+            var texts = {
+                "error=invalid":   ["error",   "Username or password is invalid."],
+                "error=login":     ["info",    "Please log in to continue."],
+                "error=db":        ["error",   "The database is not reachable. Start the Java DB server (or restart the application) and try again."],
+                "msg=registered":  ["success", "Registration successful! Please log in."],
+                "msg=loggedout":   ["success", "You have been logged out."]
+            };
+            var q = window.location.search.replace(/^\?/, "").split("&");
+            for (var i = 0; i < q.length; i++) {
+                if (texts[q[i]]) {
+                    var box = document.getElementById("flash");
+                    box.className = "flash " + texts[q[i]][0];
+                    box.textContent = texts[q[i]][1];
+                    box.style.display = "block";
+                    break;
+                }
+            }
+        })();
+    </script>
+</body>
+</html>

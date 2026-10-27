@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <display-name>EBookMgmtSys</display-name>
+
+    <!-- Creates the database tables + sample data on start-up -->
+    <listener>
+        <listener-class>com.ebookmanagement.listener.AppInitListener</listener-class>
+    </listener>
+
+    <!-- Read all form data as UTF-8 -->
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>com.ebookmanagement.filter.EncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- Every page below needs a logged-in user -->
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>com.ebookmanagement.filter.AuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/dashboard.jsp</url-pattern>
+        <url-pattern>/library.jsp</url-pattern>
+        <url-pattern>/ELibrary.jsp</url-pattern>
+        <url-pattern>/Read.jsp</url-pattern>
+        <url-pattern>/AddBook.jsp</url-pattern>
+        <url-pattern>/AddBookServlet</url-pattern>
+        <url-pattern>/BookTable.jsp</url-pattern>
+        <url-pattern>/DeleteBook.jsp</url-pattern>
+        <url-pattern>/write.jsp</url-pattern>
+        <url-pattern>/saveBookContent.jsp</url-pattern>
+        <url-pattern>/viewContent.jsp</url-pattern>
+        <url-pattern>/content/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.ebookmanagement.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.ebookmanagement.servlet.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddBookServlet</servlet-name>
+        <servlet-class>com.ebookmanagement.servlet.AddBookServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.ebookmanagement.servlet.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddBookServlet</servlet-name>
+        <url-pattern>/AddBookServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+</web-app>

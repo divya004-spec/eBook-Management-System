@@ -1,0 +1,172 @@
+*{
+    margin:0px;
+    padding:0px;
+    text-decoration:none;
+    list-style:none;
+    font-family:"poppins";
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    text-align:center;
+    width:100%;
+    height:80px;
+    background:#072019;
+}
+.navbar h2{
+    color:#ffffff;
+    font-size:25px;
+    font-weight:500;
+    padding:0px 20px;
+}
+.navmenu{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+	
+}
+.navmenu li{
+	display:inline-block;
+}
+.navmenu li a{
+    color:#ffffff;
+    margin-right:20px;
+    padding:0px 10px;
+    font-size:18px;
+    font-weight:500;
+}
+.search-box .search{
+	padding:12px 8px;
+	border-radius:50px;
+	font-size:16px;
+}
+.navmenu .search-box i{
+	color:#ffffff;
+	position:relative;
+	right:50px;
+	top:2px;
+	padding:12px;
+	border-radius:50px;
+}
+header{
+	background:#e7f0f3ac;
+	width:100%;
+	height:100vh;
+}
+
+.main-header{
+	width:75%;
+	margin:auto;
+	height:80vh;
+	display:flex;
+	align-items:center;
+	justify-content:space-around;
+}
+.main-header h5{
+	font-size:22px;
+	color:#0b910b;
+	font-weight:550;
+}
+.main-header h2{
+	font-size:48px;
+	width:340px;
+	margin-top:10px;
+	margin-bottom:24px;
+}
+.main-header p{
+	margin-bottom:60px;
+}
+.main-header .btn{
+	background:#0b910b;
+	border:1px solid #0b910b;
+	font-size:24px;
+	color:#ffffff;
+	font-weight:500;
+	padding:12px 30px;
+	border-radius:50px;
+	transition:background .5s, border .5s, color .5s;
+}
+
+.main-header .btn:hover {
+	background:#088508;
+	border-color:#088508;
+	color:#e0e0e0;
+}
+
+.main-header img{
+	width:560px;
+	height:auto;
+}
+
+/* Features */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+    background-color: #f4f4f9;
+}
+
+.feature-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    width: 25%;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box i {
+    font-size: 50px;
+    color:red;
+    margin-bottom: 20px;
+}
+
+.feature-box h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.feature-box p {
+    font-size: 16px;
+    color: #666;
+}
+
+.about-us {
+    background: #f4f4f9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #4CAF50;
+    animation: fadeInUp 1.5s ease-in-out;
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.about-us .footer p{
+    background: #111010;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
